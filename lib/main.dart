@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:queen_qr_code/src/bloc_observer.dart';
+import 'package:queen_qr_code/src/moduels/create_qr_code/cubit/create_qr_code_cubit.dart';
 import 'package:queen_qr_code/src/moduels/scan_barcode_screen/cubit/scan_barcode_cubit.dart';
 import 'package:queen_qr_code/src/moduels/scan_qr_code/cubit/scan_qr_code_cubit.dart';
 
@@ -27,8 +29,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => ScanQrCodeCubit(),),
         BlocProvider(create: (context) => ScanBarcodeCubit()),
+        BlocProvider(create: (context) => CreateQrCodeCubit()),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           // primaryColor: Colors.deepOrange,
